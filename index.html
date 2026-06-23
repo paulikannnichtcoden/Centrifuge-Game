@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centrifuge Balance</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="hud-chip" id="levelText">Level 1 / 20</div>
+      <div class="timer" id="timerText">00:00</div>
+      <div class="hud-chip hud-chip-right">Balance Lab</div>
+    </header>
+
+    <main class="game-layout" aria-label="Centrifuge Balance game">
+      <section class="rotor-area" aria-label="Centrifuge rotor">
+        <div class="rotor-stage" id="rotorStage">
+          <div class="rotor-plate" id="rotorPlate" aria-label="Rotor with 20 holes"></div>
+          <button class="spin-button" id="spinButton" type="button">START</button>
+          <div class="warning" id="warning" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <aside class="inventory-panel" aria-label="Tube inventory">
+        <div class="panel-heading">
+          <h2>Inventory</h2>
+          <span id="toleranceText">Tolerance 0.25</span>
+        </div>
+        <div class="inventory-list" id="inventoryList"></div>
+        <p class="tip">Tip: Opposite holes cancel each other out. Different colors have different weights.</p>
+        <div class="weight-key" aria-label="Tube weights">
+          <span><b class="key-dot red-dot"></b>Red 1</span>
+          <span><b class="key-dot green-dot"></b>Green 2</span>
+          <span><b class="key-dot blue-dot"></b>Blue 3</span>
+          <span><b class="key-dot yellow-dot"></b>Yellow 4</span>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <h1 id="modalTitle">Centrifuge Balance</h1>
+      <p id="modalText"></p>
+      <p class="modal-meta" id="modalMeta"></p>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+</body>
+</html>
